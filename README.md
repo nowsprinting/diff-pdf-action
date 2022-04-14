@@ -1,5 +1,25 @@
-# Container Action Template
+# diff-pdf-action
 
-To get started, click the `Use this template` button on this repository [which will create a new repository based on this template](https://github.blog/2019-06-06-generate-new-repositories-with-repository-templates/).
+Action for visually comparing two PDF files using [diff-pdf](https://github.com/vslavik/diff-pdf).
 
-For info on how to build your first Container action, see the [toolkit docs folder](https://github.com/actions/toolkit/blob/master/docs/container-action.md).
+
+
+## Usage
+
+### Container
+
+```
+jobs:
+  diff:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/nowsprinting/diff-pdf-action:latest
+      options: --init
+    steps:
+      - run: diff-pdf --output-diff=diff.pdf a.pdf b.pdf
+```
+
+
+### Actions
+
+TBD
