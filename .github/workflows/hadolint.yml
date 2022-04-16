@@ -10,6 +10,7 @@ on:
     types: [ opened, synchronize, reopened ]  # Same as default
     paths:
       - 'Dockerfile'
+  workflow_dispatch:  # temporary
 
 jobs:
   lint:
