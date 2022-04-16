@@ -1,4 +1,4 @@
-name: Build and push Docker image
+name: Docker image
 
 on:
   push:
@@ -10,7 +10,6 @@ on:
 
 jobs:
   build-and-push-docker-image:
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     permissions:
       contents: read
