@@ -5,6 +5,7 @@ on:
     workflows: [ "Lint Dockerfile" ]
     types: [ completed ]
     branches: [ master ]
+  workflow_dispatch:  # temporary
 
 jobs:
   build-and-push-docker-image:
