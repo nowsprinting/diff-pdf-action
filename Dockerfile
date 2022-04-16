@@ -27,5 +27,5 @@ RUN apt-get update \
 
 COPY --from=builder /diff-pdf/diff-pdf /usr/bin/
 COPY LICENSE README.md /
-
-ENTRYPOINT ["diff-pdf"]
+COPY entrypoint.sh /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
