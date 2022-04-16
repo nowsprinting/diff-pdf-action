@@ -33,5 +33,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: ghcr.io/${{ github.repository_owner }}/diff-pdf:latest
           labels: org.opencontainers.image.source=https://github.com/${{ github.repository }}
+          tags:
+            ghcr.io/${{ github.repository_owner }}/diff-pdf:latest
+            ghcr.io/${{ github.repository_owner }}/diff-pdf:0.5
