@@ -29,5 +29,5 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ github.repository_owner }}/diff-pdf:latest
+          tags: ${{ github.repository%-action }}:latest
           labels: org.opencontainers.image.source=https://github.com/${{ github.repository }}
