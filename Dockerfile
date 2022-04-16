@@ -8,8 +8,8 @@ RUN apt-get update \
   && apt-get -y clean \
   && rm -rf /var/lib/apt/lists/*
 
-RUN git clone --depth=1 https://github.com/vslavik/diff-pdf.git \
-  && cd diff-pdf \
+WORKDIR /diff-pdf
+RUN git clone --depth=1 https://github.com/vslavik/diff-pdf.git .\
   && ./bootstrap \
   && ./configure \
   && make
