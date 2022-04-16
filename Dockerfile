@@ -22,7 +22,6 @@ RUN apt-get update \
   && apt-get install -y --no-install-recommends \
     libpoppler-glib-dev \
     libwxgtk3.0-gtk3-dev \
-    fonts-noto \
   && apt-get -y clean \
   && rm -rf /var/lib/apt/lists/*
 

@@ -1,6 +1,7 @@
-.PHONY: run
-run: build
-	docker run nowsprinting/diff-pdf
+.PHONY: test
+test: build
+	docker run --rm -v $(PWD)/test:/test \
+ 	  nowsprinting/diff-pdf --output-diff=test/diff.pdf test/a.pdf test/b.pdf
 
 .PHONY: build
 build:
