@@ -1,0 +1,22 @@
+name: Update major and latest branches  # for GitHub Actions, see https://github.com/actions/toolkit/blob/master/docs/action-versioning.md#versioning
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  update-major:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: nowsprinting/check-version-format-action@v3
+        id: version
+        with:
+          prefix: v
+
+      - name: Update major and latest branches
+        run: |
+          git push --force origin 'HEAD:refs/heads/${{ steps.version.outputs.major_prerelease }}'
+          git push --force origin 'HEAD:refs/heads/latest'
+        if: steps.version.outputs.is_valid == 'true'
