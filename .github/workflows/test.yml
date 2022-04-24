@@ -5,12 +5,12 @@ on:
     branches:
       - master
     paths:
-      - .github/workflows/build-image.yml
+      - .github/workflows/test.yml
       - action.yml
   pull_request:
     types: [ opened, synchronize, reopened ]  # Same as default
     paths:
-      - .github/workflows/build-image.yml
+      - .github/workflows/test.yml
       - action.yml
   workflow_run:
     workflows: [ Docker image ]
