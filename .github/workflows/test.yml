@@ -1,0 +1,39 @@
+name: Test
+
+on:
+  push:
+    branches:
+      - master
+    paths-ignore:
+      - '**.md'
+  pull_request:
+    types: [ opened, synchronize, reopened ]  # Same as default
+    paths-ignore:
+      - '**.md'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Test expect to match
+        uses: ./
+        with:
+          file1: test/expected.pdf
+          file2: test/actual.pdf
+          options: --verbose
+
+      - name: Test view the difference
+        uses: ./
+        with:
+          file1: test/a.pdf
+          file2: test/b.pdf
+          options: --skip-identical --output-diff=test/diff.pdf --dpi=100
+          suppress-diff-error: true
+
+      - uses: actions/upload-artifact@v3
+        with:
+          path: test
+        if: always()

@@ -1,12 +1,35 @@
-name: 'Container Action Template'
-description: 'Get started with Container actions'
-author: 'GitHub'
-inputs: 
-  myInput:
-    description: 'Input to use'
-    default: 'world'
+name: 'diff-pdf action'
+description: 'Action for visually comparing two PDF files using diff-pdf'
+author: 'nowsprinting'
+
+inputs:
+  file1:
+    description: 'Input PDF file1 path'
+    required: true
+
+  file2:
+    description: 'Input PDF file2 path'
+    required: true
+
+  options:
+    description: '[-h] [-v] [-s] [-m] [-g] [--output-diff <str>] [--channel-tolerance <num>] [--dpi <num>]'
+    required: false
+    default: ''
+
+  suppress-diff-error:
+    description: 'Exit code to 0 even there is a difference (Expected to be used with --output-diff option)'
+    required: false
+    default: 'false'
+
 runs:
   using: 'docker'
-  image: 'Dockerfile'
+  image: 'docker://ghcr.io/nowsprinting/diff-pdf:latest'
   args:
-    - ${{ inputs.myInput }}
+    - "${{ inputs.options }}"
+    - ${{ inputs.file1 }}
+    - ${{ inputs.file2 }}
+    - ${{ inputs.suppress-diff-error }}
+
+branding:
+  icon: 'copy'
+  color: 'red'
