@@ -43,3 +43,23 @@ jobs:
         with:
           path: test/*.pdf
         if: always()
+
+  test-review-rendered-with-japanese-font-pdf:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Output diff file
+        uses: ./
+        with:
+          file1: test/review_japanese_1.pdf
+          file2: test/review_japanese_2.pdf
+          options: --output-diff=test/review_japanese_diff_actual.pdf
+          suppress-diff-error: true
+
+      - name: Verify diff file
+        uses: ./
+        with:
+          file1: test/review_japanese_diff_expected.pdf
+          file2: test/review_japanese_diff_actual.pdf
+          options: --verbose
