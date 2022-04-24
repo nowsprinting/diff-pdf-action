@@ -1,6 +1,7 @@
 name: Update major and latest branches  # for GitHub Actions, see https://github.com/actions/toolkit/blob/master/docs/action-versioning.md#versioning
 
 on:
+  workflow_dispatch:
   push:
     tags:
       - 'v*'
