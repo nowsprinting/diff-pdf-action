@@ -5,6 +5,8 @@
 
 Action for visually comparing two PDF files using [diff-pdf](https://github.com/vslavik/diff-pdf).
 
+By default, This action is successful if there are no differences and failure if the two PDFs differ.
+If given the `--output-diff` option, it produces a PDF file with visually highlighted differences.
 
 
 ## Inputs
@@ -41,11 +43,9 @@ If set `true`, Exit code to 0 even there is a difference.
 (Expected to be used with `--output-diff` option)
 
 
-
 ## Outputs
 
 None.
-
 
 
 ## Examples
@@ -94,3 +94,13 @@ jobs:
       - run: diff-pdf "--verbose" expected.pdf actual.pdf
       - run: diff-pdf "--skip-identical --output-diff=diff.pdf --dpi=100" base.pdf head.pdf true
 ```
+
+
+## License
+
+MIT License
+
+
+## How to contribute
+
+Open an issue or create a pull request.
