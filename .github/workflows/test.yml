@@ -4,12 +4,18 @@ on:
   push:
     branches:
       - master
-    paths-ignore:
-      - '**.md'
+    paths:
+      - .github/workflows/build-image.yml
+      - action.yml
   pull_request:
     types: [ opened, synchronize, reopened ]  # Same as default
-    paths-ignore:
-      - '**.md'
+    paths:
+      - .github/workflows/build-image.yml
+      - action.yml
+  workflow_run:
+    workflows: [ Docker image ]
+    types:
+      - completed
 
 jobs:
   test:
@@ -35,5 +41,5 @@ jobs:
 
       - uses: actions/upload-artifact@v3
         with:
-          path: test
+          path: test/*.pdf
         if: always()
