@@ -24,7 +24,7 @@ Input PDF file2 path.
 diff-pdf command options.
 `[-h] [-v] [-s] [-m] [-g] [--output-diff <str>] [--channel-tolerance <num>] [--dpi <num>]`
 
-```shell
+```
 -h, --help               	show this help message
 -v, --verbose            	be verbose
 -s, --skip-identical     	only output pages with differences
@@ -54,7 +54,7 @@ None.
 
 #### Expect to match (e.g. visual regression tests)
 
-```
+```yaml
 jobs:
   diff:
     runs-on: ubuntu-latest
@@ -64,27 +64,27 @@ jobs:
           file1: expected.pdf
           file2: actual.pdf
           options: --verbose
-        # If unmatch pdf, this step so fail.
+        # If PDFs do not match, this step will fail.
 ```
 
 #### View the difference (e.g. before and after pull-request)
 
-```
+```yaml
 jobs:
   diff:
     runs-on: ubuntu-latest
     steps:
       - uses: nowsprinting/diff-pdf-action@v1
         with:
-          file1: a.pdf
-          file2: b.pdf
+          file1: base.pdf
+          file2: head.pdf
           options: --skip-identical --output-diff=diff.pdf --dpi=100
           suppress-diff-error: true
 ```
 
 ### Container
 
-```
+```yaml
 jobs:
   diff:
     runs-on: ubuntu-latest
@@ -92,5 +92,5 @@ jobs:
       image: ghcr.io/nowsprinting/diff-pdf:latest
     steps:
       - run: diff-pdf "--verbose" expected.pdf actual.pdf
-      - run: diff-pdf "--skip-identical --output-diff=diff.pdf" a.pdf b.pdf true
+      - run: diff-pdf "--skip-identical --output-diff=diff.pdf --dpi=100" base.pdf head.pdf true
 ```
