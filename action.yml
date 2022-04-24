@@ -26,9 +26,9 @@ runs:
   image: 'docker://ghcr.io/nowsprinting/diff-pdf:latest'
   args:
     - "${{ inputs.options }}"
-    - ${{ input.file1 }}
-    - ${{ input.file2 }}
-    - ${{ input.suppress-diff-error }}
+    - ${{ inputs.file1 }}
+    - ${{ inputs.file2 }}
+    - ${{ inputs.suppress-diff-error }}
 
 branding:
   icon: 'copy'
