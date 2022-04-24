@@ -41,7 +41,8 @@ jobs:
 
       - uses: actions/upload-artifact@v3
         with:
-          path: test/*.pdf
+          name: Output diff PDFs
+          path: test/diff.pdf
         if: always()
 
   test-review-rendered-with-japanese-font-pdf:
@@ -54,12 +55,18 @@ jobs:
         with:
           file1: test/review_japanese_1.pdf
           file2: test/review_japanese_2.pdf
-          options: --output-diff=test/review_japanese_diff_actual.pdf
+          options: --output-diff=test/diff.pdf
           suppress-diff-error: true
 
       - name: Verify diff file
         uses: ./
         with:
           file1: test/review_japanese_diff_expected.pdf
-          file2: test/review_japanese_diff_actual.pdf
+          file2: test/diff.pdf
           options: --verbose
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: Output diff PDFs via test-review-rendered-with-japanese-font-pdf
+          path: test/diff.pdf
+        if: always()
