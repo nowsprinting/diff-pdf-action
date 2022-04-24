@@ -81,4 +81,3 @@ fabric.properties
 
 # Output via run test
 test/diff.pdf
-test/review_japanese_diff_actual.pdf
