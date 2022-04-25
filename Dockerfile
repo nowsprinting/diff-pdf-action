@@ -1,4 +1,4 @@
-FROM gcc:11.2-bullseye as builder
+FROM gcc:11.3.0-bullseye as builder
 
 RUN apt-get update \
   && apt-get install -y --no-install-recommends \
