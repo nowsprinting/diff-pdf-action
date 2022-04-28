@@ -19,9 +19,8 @@ LABEL maintainer="hasegawa@hubsys.co.jp"
 
 RUN apt-get update \
   && apt-get install -y --no-install-recommends \
-    libpoppler-glib-dev \
-    libwxgtk3.0-gtk3-dev \
-    poppler-utils \
+    libpoppler-glib8 \
+    libwxgtk3.0-gtk3-0v5 \
     poppler-data \
   && apt-get -y clean \
   && rm -rf /var/lib/apt/lists/*
