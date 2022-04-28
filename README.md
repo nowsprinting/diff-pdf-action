@@ -37,6 +37,8 @@ diff-pdf command options.
 --dpi=<num>              	rasterization resolution (default: 300 dpi)
 ```
 
+Note: `--view` option is not available.
+
 ### suppress-diff-error
 
 If set `true`, Exit code to 0 even there is a difference.
@@ -46,6 +48,12 @@ If set `true`, Exit code to 0 even there is a difference.
 ## Outputs
 
 None.
+
+Note: Output following log when running this action. However, don't worry there is no problem.
+```bash
+Unable to init server: Could not connect: Connection refused
+01:20:19: Error: Unable to initialize GTK+, is DISPLAY set properly?
+```
 
 
 ## Examples
