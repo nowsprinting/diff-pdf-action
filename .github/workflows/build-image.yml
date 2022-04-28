@@ -9,6 +9,9 @@ on:
       - Dockerfile
       - entrypoint.sh
 
+env:
+  DIFF_PDF_VERSION: 'v0.5'
+
 jobs:
   build-and-push-docker-image:
     runs-on: ubuntu-latest
@@ -33,8 +36,9 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: .
+          build-args: REPO_REF=${{ env.DIFF_PDF_VERSION }}
           push: true
           labels: org.opencontainers.image.source=https://github.com/${{ github.repository }}
           tags: |
             ghcr.io/${{ github.repository_owner }}/diff-pdf:latest
-            ghcr.io/${{ github.repository_owner }}/diff-pdf:0.5
+            ghcr.io/${{ github.repository_owner }}/diff-pdf:${{ env.DIFF_PDF_VERSION }}
