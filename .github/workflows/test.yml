@@ -31,6 +31,12 @@ jobs:
           file2: test/actual.pdf
           options: --verbose
 
+      - name: Test no options
+        uses: ./
+        with:
+          file1: test/expected.pdf
+          file2: test/actual.pdf
+
       - name: Test view the difference
         uses: ./
         with:
