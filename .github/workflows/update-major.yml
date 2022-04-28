@@ -17,6 +17,9 @@ jobs:
         with:
           prefix: v
 
+      - uses: actions/checkout@v3
+        if: steps.version.outputs.is_valid == 'true'
+
       - name: Update major and latest branches
         run: |
           git push --force origin 'HEAD:refs/heads/${{ steps.version.outputs.major_prerelease }}'
