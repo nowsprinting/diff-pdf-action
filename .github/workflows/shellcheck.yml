@@ -1,15 +1,17 @@
-name: ShellCheck
+name: Lint shell
 
 on:
   push:
     branches:
       - master
     paths:
-      - '**/*.sh'
+      - .github/workflows/shellcheck.yml
+      - '**.sh'
   pull_request:
     types: [ opened, synchronize, reopened ]  # Same as default
     paths:
-      - '**/*.sh'
+      - .github/workflows/shellcheck.yml
+      - '**.sh'
 
 jobs:
   shellcheck:
