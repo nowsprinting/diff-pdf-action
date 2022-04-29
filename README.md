@@ -1,4 +1,4 @@
-# diff-pdf action
+# diff-pdf-action
 
 [![Docker build](https://github.com/nowsprinting/diff-pdf-action/actions/workflows/build-image.yml/badge.svg)](https://github.com/nowsprinting/diff-pdf-action/actions/workflows/build-image.yml)
 [![Test](https://github.com/nowsprinting/diff-pdf-action/actions/workflows/test.yml/badge.svg)](https://github.com/nowsprinting/diff-pdf-action/actions/workflows/test.yml)

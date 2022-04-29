@@ -1,4 +1,4 @@
-name: 'diff-pdf action'
+name: 'diff-pdf'
 description: 'Action for visually comparing two PDF files using diff-pdf'
 author: 'nowsprinting'
 
