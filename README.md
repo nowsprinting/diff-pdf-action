@@ -58,7 +58,7 @@ Unable to init server: Could not connect: Connection refused
 
 ## Examples
 
-### Action
+### Using action
 
 #### Expect to match (e.g. visual regression tests)
 
@@ -66,7 +66,9 @@ Unable to init server: Could not connect: Connection refused
 jobs:
   diff:
     runs-on: ubuntu-latest
+
     steps:
+      - uses: actions/checkout@v3
       - uses: nowsprinting/diff-pdf-action@v1
         with:
           file1: expected.pdf
@@ -75,13 +77,15 @@ jobs:
         # If PDFs do not match, this step will fail.
 ```
 
-#### View the difference (e.g. before and after pull-request)
+#### Generate diff PDF (e.g. before and after on pull-request)
 
 ```yaml
 jobs:
   diff:
     runs-on: ubuntu-latest
+
     steps:
+      - uses: actions/checkout@v3
       - uses: nowsprinting/diff-pdf-action@v1
         with:
           file1: base.pdf
@@ -90,7 +94,7 @@ jobs:
           suppress-diff-error: true
 ```
 
-### Container
+### Using container
 
 ```yaml
 jobs:
@@ -98,9 +102,10 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/nowsprinting/diff-pdf:latest
+
     steps:
-      - run: diff-pdf "--verbose" expected.pdf actual.pdf
-      - run: diff-pdf "--skip-identical --output-diff=diff.pdf --dpi=100" base.pdf head.pdf true
+      - uses: actions/checkout@v3
+      - run: diff-pdf --verbose expected.pdf actual.pdf
 ```
 
 
