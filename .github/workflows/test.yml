@@ -65,3 +65,20 @@ jobs:
           name: Output diff PDFs
           path: test/*diff.pdf
         if: always()
+
+  test-on-container:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/nowsprinting/diff-pdf:latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - run: diff-pdf --verbose expected.pdf actual.pdf
+      - run: diff-pdf --skip-identical --output-diff=diff.pdf --dpi=100 base.pdf head.pdf true
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: Output diff PDFs using container
+          path: test/*diff.pdf
+        if: always()
