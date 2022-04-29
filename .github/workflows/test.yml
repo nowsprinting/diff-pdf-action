@@ -73,12 +73,4 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-
       - run: diff-pdf --verbose test/expected.pdf test/actual.pdf
-      - run: diff-pdf --skip-identical --output-diff=diff.pdf --dpi=100 test/a.pdf test/b.pdf
-
-      - uses: actions/upload-artifact@v3
-        with:
-          name: Output diff PDFs using container
-          path: test/*diff.pdf
-        if: always()
