@@ -74,8 +74,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - run: diff-pdf --verbose expected.pdf actual.pdf
-      - run: diff-pdf --skip-identical --output-diff=diff.pdf --dpi=100 base.pdf head.pdf true
+      - run: diff-pdf --verbose test/expected.pdf test/actual.pdf
+      - run: diff-pdf --skip-identical --output-diff=diff.pdf --dpi=100 test/a.pdf test/b.pdf true
 
       - uses: actions/upload-artifact@v3
         with:
