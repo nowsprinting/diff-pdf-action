@@ -58,7 +58,7 @@ Unable to init server: Could not connect: Connection refused
 
 ## Examples
 
-### Action
+### Using action
 
 #### Expect to match (e.g. visual regression tests)
 
