@@ -1,6 +1,6 @@
 # diff-pdf action
 
-[![Docker image](https://github.com/nowsprinting/diff-pdf-action/actions/workflows/build-image.yml/badge.svg)](https://github.com/nowsprinting/diff-pdf-action/actions/workflows/build-image.yml)
+[![Docker build](https://github.com/nowsprinting/diff-pdf-action/actions/workflows/build-image.yml/badge.svg)](https://github.com/nowsprinting/diff-pdf-action/actions/workflows/build-image.yml)
 [![Test](https://github.com/nowsprinting/diff-pdf-action/actions/workflows/test.yml/badge.svg)](https://github.com/nowsprinting/diff-pdf-action/actions/workflows/test.yml)
 
 Action for visually comparing two PDF files using [diff-pdf](https://github.com/vslavik/diff-pdf).

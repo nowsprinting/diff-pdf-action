@@ -5,11 +5,13 @@ on:
     branches:
       - master
     paths:
-      - 'Dockerfile'
+      - .github/workflows/hadolint.yml
+      - Dockerfile
   pull_request:
     types: [ opened, synchronize, reopened ]  # Same as default
     paths:
-      - 'Dockerfile'
+      - .github/workflows/hadolint.yml
+      - Dockerfile
 
 jobs:
   lint:
