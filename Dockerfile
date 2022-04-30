@@ -17,10 +17,6 @@ RUN git clone --depth=1 --branch $REPO_REF $REPO_URL .\
 
 
 FROM debian:bullseye-slim
-ARG REPO_URL=https://github.com/vslavik/diff-pdf.git
-ARG REPO_REF=master
-LABEL diff-pdf.repository=$REPO_URL
-LABEL diff-pdf.version=$REPO_REF
 LABEL maintainer="@nowsprinting"
 
 RUN apt-get update \
