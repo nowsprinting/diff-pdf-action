@@ -5,11 +5,11 @@ on:
     branches:
       - master
     paths:
-      - '.github/workflows/**'
+      - .github/workflows/**
   pull_request:
     types: [ opened, synchronize, reopened ]  # Same as default
     paths:
-      - '.github/workflows/**'
+      - .github/workflows/**
 
 jobs:
   lint:

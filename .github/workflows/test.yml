@@ -14,8 +14,7 @@ on:
       - action.yml
   workflow_run:
     workflows: [ Docker build ]
-    types:
-      - completed
+    types: [ completed ]
 
 jobs:
   test:
