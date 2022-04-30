@@ -23,8 +23,8 @@ Input PDF file2 path.
 
 ### options
 
-diff-pdf command options.
-`[-h] [-v] [-s] [-m] [-g] [--output-diff <str>] [--channel-tolerance <num>] [--dpi <num>]`
+Specify diff-pdf command options if you need.
+Follows are quoted from `diff-pdf --help`:
 
 ```
 -h, --help               	show this help message
