@@ -28,7 +28,7 @@ RUN apt-get update \
   && rm -rf /var/lib/apt/lists/*
 
 COPY --from=builder /diff-pdf/diff-pdf /usr/bin/
-COPY LICENSE README.md /
-COPY entrypoint.sh /entrypoint.sh
+COPY LICENSE README.md entrypoint.sh /
+
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["--help"]
