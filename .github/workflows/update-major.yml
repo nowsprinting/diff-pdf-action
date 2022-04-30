@@ -1,4 +1,4 @@
-name: Update major and latest branches  # for GitHub Actions, see https://github.com/actions/toolkit/blob/master/docs/action-versioning.md#versioning
+name: Update major and latest refs  # for GitHub Actions, see https://github.com/actions/toolkit/blob/master/docs/action-versioning.md#versioning
 
 on:
   push:
