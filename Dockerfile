@@ -1,4 +1,4 @@
-FROM gcc:11.3.0-bullseye as builder
+FROM gcc:12.1.0-bullseye as builder
 ARG REPO_URL=https://github.com/vslavik/diff-pdf.git
 ARG REPO_REF=master
 
