@@ -12,13 +12,13 @@ on:
       - .github/workflows/**
 
 jobs:
-  lint:
+  actionlint:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v3
 
-      - name: Lint
+      - name: Lint workflow files
         shell: bash
         run: |
           bash <(curl -LsS --retry 2 https://raw.githubusercontent.com/rhysd/actionlint/main/scripts/download-actionlint.bash)
