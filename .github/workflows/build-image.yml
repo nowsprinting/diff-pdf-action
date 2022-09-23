@@ -9,6 +9,10 @@ on:
       - Dockerfile
       - entrypoint.sh
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 env:
   DIFF_PDF_VERSION: 'v0.5'
 
