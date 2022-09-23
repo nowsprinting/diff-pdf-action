@@ -117,3 +117,12 @@ MIT License
 ## How to contribute
 
 Open an issue or create a pull request.
+
+### Create pull request
+
+Be grateful if you could label the PR as `enhancement`, `bug`, `chore` and `documentation`. See [PR Labeler settings](.github/pr-labeler.yml) for automatically labeling from the branch name.
+
+
+## Release workflow
+
+Make change draft release to `Publish release`.
