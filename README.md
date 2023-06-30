@@ -66,6 +66,8 @@ Unable to init server: Could not connect: Connection refused
 jobs:
   diff:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
 
     steps:
       - uses: actions/checkout@v3
@@ -83,6 +85,8 @@ jobs:
 jobs:
   diff:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
 
     steps:
       - uses: actions/checkout@v3
@@ -100,6 +104,8 @@ jobs:
 jobs:
   diff:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     container:
       image: ghcr.io/nowsprinting/diff-pdf:latest
 
