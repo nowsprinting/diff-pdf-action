@@ -27,7 +27,7 @@ jobs:
       contents: read
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Test expect to match
         uses: ./
@@ -79,7 +79,7 @@ jobs:
       image: ghcr.io/nowsprinting/diff-pdf:latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - run: diff-pdf --verbose test/expected.pdf test/actual.pdf
 
   notify:
