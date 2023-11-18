@@ -84,7 +84,7 @@ jobs:
 
   notify:
     needs: [ test, test-on-container ]
-    if: failure()
+    if: failure() && github.event.pull_request.head.repo.fork == false # Skip on public fork, because can not read secrets.
     runs-on: ubuntu-latest
     permissions:
       actions: read

@@ -9,6 +9,7 @@ on:
 
 jobs:
   update-major:
+    if: github.repository_owner == 'nowsprinting' # Skip on forked repo
     runs-on: ubuntu-latest
     permissions:
       contents: write
