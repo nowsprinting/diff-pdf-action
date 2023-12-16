@@ -65,7 +65,7 @@ jobs:
           file2: test/review_japanese_diff.pdf
           options: --verbose
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: Output diff PDFs
           path: test/*diff.pdf
