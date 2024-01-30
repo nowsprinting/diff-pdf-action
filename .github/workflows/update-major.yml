@@ -15,7 +15,7 @@ jobs:
       contents: write
 
     steps:
-      - uses: nowsprinting/check-version-format-action@v3
+      - uses: nowsprinting/check-version-format-action@v4
         id: version
         with:
           prefix: v
