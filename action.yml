@@ -12,7 +12,7 @@ inputs:
     required: true
 
   options:
-    description: '[-h] [-v] [-s] [-m] [-g] [--output-diff <str>] [--channel-tolerance <num>] [--dpi <num>]'
+    description: '[-v] [-s] [-m] [-g] [--output-diff <str>] [--channel-tolerance <num>] [--per-page-pixel-tolerance <num>] [--dpi <num>]'
     required: false
     default: ''
 
