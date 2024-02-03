@@ -14,7 +14,7 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  DIFF_PDF_VERSION: 'v0.5'
+  DIFF_PDF_VERSION: 'v0.5.2'
 
 jobs:
   build-and-push-docker-image:

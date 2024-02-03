@@ -27,14 +27,14 @@ Specify diff-pdf command options if you need.
 Follows are quoted from `diff-pdf --help`:
 
 ```
--h, --help               	show this help message
--v, --verbose            	be verbose
--s, --skip-identical     	only output pages with differences
--m, --mark-differences   	additionally mark differences on left side
--g, --grayscale          	only differences will be in color, unchanged parts will show as gray
---output-diff=<str>      	output differences to given PDF file
---channel-tolerance=<num>	consider channel values to be equal if within specified tolerance
---dpi=<num>              	rasterization resolution (default: 300 dpi)
+-v, --verbose            			be verbose
+-s, --skip-identical     			only output pages with differences
+-m, --mark-differences   			additionally mark differences on left side
+-g, --grayscale          			only differences will be in color, unchanged parts will show as gray
+--output-diff=<str>      			output differences to given PDF file
+--channel-tolerance=<num>			consider channel values to be equal if within specified tolerance
+--per-page-pixel-tolerance=<num>	total number of pixels allowed to be different per page before specifying the page is different
+--dpi=<num>              			rasterization resolution (default: 300 dpi)
 ```
 
 Note: `--view` option is not available.
