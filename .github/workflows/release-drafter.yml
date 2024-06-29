@@ -14,6 +14,7 @@ jobs:
   release-drafter:
     if: github.repository_owner == 'nowsprinting' # Skip on forked repo
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     permissions:
       contents: write
       pull-requests: read
