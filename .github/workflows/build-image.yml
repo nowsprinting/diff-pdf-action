@@ -13,8 +13,11 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
-env:
-  DIFF_PDF_VERSION: 'v0.5.2'
+permissions: {}
+
+defaults:
+  run:
+    shell: bash
 
 jobs:
   build-and-push-docker-image:
@@ -24,6 +27,8 @@ jobs:
     permissions:
       contents: read
       packages: write
+    env:
+      DIFF_PDF_VERSION: 'v0.5.2'
 
     steps:
       - uses: actions/checkout@v4

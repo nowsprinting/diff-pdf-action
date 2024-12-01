@@ -5,6 +5,16 @@ on:
     tags:
       - 'v*'
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions: {}
+
+defaults:
+  run:
+    shell: bash
+
 jobs:
   update-major:
     if: github.repository_owner == 'nowsprinting' # Skip on forked repo
