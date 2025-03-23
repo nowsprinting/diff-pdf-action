@@ -24,12 +24,12 @@ jobs:
       contents: write
 
     steps:
-      - uses: nowsprinting/check-version-format-action@v4
+      - uses: nowsprinting/check-version-format-action@c7180d5aa53d69af70c364c047482fc71e133f55 # v4
         id: version
         with:
           prefix: v
 
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
         if: steps.version.outputs.is_valid == 'true'
 
       - name: Update major and latest branches
