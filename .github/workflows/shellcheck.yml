@@ -37,7 +37,7 @@ jobs:
       - name: Run ShellCheck
         uses: ludeeus/action-shellcheck@00b27aa7cb85167568cb48a3838b75f4265f2bca # master
 
-      - uses: 8398a7/action-slack@28ba43ae48961b90635b50953d216767a6bea486 # v3
+      - uses: 8398a7/action-slack@1750b5085f3ec60384090fb7c52965ef822e869e # v3
         with:
           status: ${{ job.status }}
           fields: repo,message,job,pullRequest
